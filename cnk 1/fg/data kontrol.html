@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Multi-Iframe CNK (Responsive)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/utilitas/style.css">
+</head>
+<body class="bg-[#f9f9fc] text-[#333] min-h-screen font-[Inter,sans-serif] overflow-x-hidden">
+
+    <div id="sidebar-container"></div>
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+    <main id="main-content" class="flex-1 flex flex-col ml-0 md:ml-[280px] transition-all duration-300 ease-in-out">
+
+        <header class="p-4 bg-white border-b md:hidden sticky top-0 z-30">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="https://placehold.co/32x32/e2e8f0/334155?text=CNK" alt="Logo" class="w-8 h-8 object-contain rounded-md">
+                    <h1 class="text-md font-bold text-gray-700">Dashboard</h1>
+                </div>
+                <button id="hamburger-btn" class="text-gray-600 hover:text-gray-900">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </header>
+
+        <iframe 
+            class="w-full h-screen border-0 p-5"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubhtml?gid=261351474&amp;single=true&amp;widget=true&amp;headers=false">
+        </iframe>
+
+    </main>
+
+    <script src="/utilitas/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #sidebar {
+            z-index: 50;
+        }
+
+        .resizer {
+            width: 6px;
+            cursor: ew-resize;
+            background-color: #ddd;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 10;
+        }
+
+        .scale-wrapper {
+            transform: scale(0.45);
+            /* Ubah ke 0.8 jika terlalu kecil */
+            transform-origin: top left;
+            pointer-events: none;
+            width: max-content;
+            height: max-content;
+        }
+
+
+
+        .iframe-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        .scaled-iframe1 {
+            width: 1950px;
+            height: 753px;
+            border: none;
+            transform-origin: top left;
+            pointer-events: auto;
+        }
+
+        .scaled-iframe2 {
+            width: 1950px;
+            height: 790px;
+            border: none;
+            transform-origin: top left;
+            transform: scale(calc(100vw / 1905));
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f9f9fc] text-[#333] min-h-screen font-[Inter,sans-serif]">
+    <div class="flex min-h-screen">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="fixed top-0 left-0 bottom-0 bg-[#ffffff] p-5 border-r border-[#eee] overflow-y-auto"
+            style="width: 350px;">
+            <div class="flex items-center gap-2 mb-8">
+                <img src="logo.png" alt="Logo" class="w-10 h-10 object-contain">
+                <h2
+                    class="text-sm text-[#4a4a4a] whitespace-nowrap overflow-hidden text-ellipsis max-w-full transition-all duration-300">
+                    PT. CITRA NUGERAH KARYA
+                </h2>
+
+            </div>
+            <nav>
+                <ul class="space-y-2">
+
+                    <!-- Dashboard -->
+                    <li class="menu-item font-semibold rounded-lg">
+                        <a href="Dashboard Finish Good.html" class="flex items-center px-4 py-2 text-sm text-[#444]">
+                            <span class="mr-2">📊</span> Dashboard Finish Good
+                        </a>
+                    </li>
+                    <li class="menu-item font-semibold rounded-lg">
+                        <a href="Dashboard Subcont.html" class="flex items-center px-4 py-2 text-sm text-[#444]">
+                            <span class="mr-2">📊</span> Dashboard Subcont
+                        </a>
+                    </li>
+
+                    <!-- CNK 1 -->
+                    <li>
+                        <button onclick="toggleMenu('cnk1')"
+                            class="flex w-full items-center px-4 py-2 text-sm text-[#444] hover:bg-[#e6e8f2] rounded-lg">
+                            <span class="mr-2">📄</span> CNK 1
+                        </button>
+                        <ul id="cnk1" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1Z03fLQtmGHpFU-GytK2Kc9QKs4OOJPKxIvbSfxQyQ-A/edit?gid=1014823213#gid=1014823213"
+                                    class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Go To GoogleSheet</a></li>
+                            <li><a href="data kotrol.html" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Data Kontrol</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 3</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- CNK 2 -->
+                    <li>
+                        <button onclick="toggleMenu('cnk2')"
+                            class="flex w-full items-center px-4 py-2 text-sm text-[#444] hover:bg-[#e6e8f2] rounded-lg">
+                            <span class="mr-2">📄</span> CNK 2
+                        </button>
+                        <ul id="cnk2" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1CX1sE_ccVYFgaiJon8Ye7au95K_dV2CKr_YBPBbKtv4/edit?usp=drive_web&ouid=105124522948263947331"
+                                    class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Go To GoogleSheet</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 2</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 3</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- CNK 3A -->
+                    <li>
+                        <button onclick="toggleMenu('cnk3a')"
+                            class="flex w-full items-center px-4 py-2 text-sm text-[#444] hover:bg-[#e6e8f2] rounded-lg">
+                            <span class="mr-2">📄</span> CNK 3A
+                        </button>
+                        <ul id="cnk3a" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1G-9BA8qunvHiVIHShRqgM0k4gD6710TUm_3i91i8Hgo/edit?gid=443047468#gid=443047468"
+                                    class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Go To GoogleSheet</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 2</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 3</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- CNK 3B -->
+                    <li>
+                        <button onclick="toggleMenu('cnk3b')"
+                            class="flex w-full items-center px-4 py-2 text-sm text-[#444] hover:bg-[#e6e8f2] rounded-lg">
+                            <span class="mr-2">📄</span> CNK 3B
+                        </button>
+                        <ul id="cnk3b" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1UukFYEyo6Yd7AponlZiG-xbeBH1G_qOei0pxYFQscl4/edit?gid=1014823213#gid=1014823213"
+                                    class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Go To GoogleSheet</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 2</a></li>
+                            <li><a href="#" class="block px-4 py-2 hover:bg-[#e6e8f2] rounded">Submenu 3</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- Dragger -->
+            <div id="resizer" class="resizer"></div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col ml-[300px] bg-[#d1fae5]">
+
+            <!-- Dashboard Content -->
+            <section class="p-6">
+                <h1 class="text-lg mb-6 font-semibold text-[#666666]">Dashboard CNK 1</h1>
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6">
+
+                    <!-- KIRI -->
+                    <div class="bg-white rounded-xl p-0 ">
+                        <div class="relative w-full aspect-[3/3.6] overflow-hidden min-h-[320px]">
+                            <div class="scale-wrapper absolute top-0 left-0">
+                                <iframe class="scaled-iframe1"
+                                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubchart?oid=1028030656&amp;format=interactive">
+                                </iframe>
+                                <iframe class="scaled-iframe1 absolute top-0 left-0"
+                                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubchart?oid=350485253&amp;format=interactive">
+                                </iframe>
+                                <iframe class="scaled-iframe1 absolute top-0 left-0"
+                                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubchart?oid=1862304987&amp;format=interactive">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KANAN -->
+                    <div class="bg-white rounded-xl p-2 overflow-hidden w-[900px] h-[320px]">
+                        <div class="w-max min-w-[100%] min-h-[320px]">
+                            <div class="scale-wrapper relative iframe-container">
+
+                                <iframe class="scaled-iframe2"
+                                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubchart?oid=125490337&amp;format=interactive">
+                                </iframe>
+                                <iframe class="scaled-iframe2 absolute top-0 left-0"
+                                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ61EaizRXCJj2E4UWPI6U5PFHq5fRpBEY2eU5wlAPnryDcK4xp3EYVSw7jHmunhFVsCbYTaZNMlGvm/pubchart?oid=570991856&amp;format=interactive">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+            <!-- Dashboard Content -->
+            <section class="p-6">
+                <h1 class="text-lg mb-6 font-semibold text-[#666666]">Dashboard CNK 2</h1>
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6">
+
+                    <!-- KIRI -->
+                    <div class="bg-white rounded-xl p-0 ">
+                        <div class="relative w-full aspect-[3/3.6] overflow-hidden min-h-[320px]">
+                            <div class="scale-wrapper absolute top-0 left-0">
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KANAN -->
+                    <div class="bg-white rounded-xl p-2 overflow-hidden w-[900px] h-[320px]">
+                        <div class="w-max min-w-[100%] min-h-[320px]">
+                            <div class="scale-wrapper relative iframe-container">
+
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- Dashboard Content -->
+            <section class="p-6">
+                <h1 class="text-lg mb-6 font-semibold text-[#666666]">Dashboard CNK 3A</h1>
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6">
+
+                    <!-- KIRI -->
+                    <div class="bg-white rounded-xl p-0 ">
+                        <div class="relative w-full aspect-[3/3.6] overflow-hidden min-h-[320px]">
+                            <div class="scale-wrapper absolute top-0 left-0">
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KANAN -->
+                    <div class="bg-white rounded-xl p-2 overflow-hidden w-[900px] h-[320px]">
+                        <div class="w-max min-w-[100%] min-h-[320px]">
+                            <div class="scale-wrapper relative iframe-container">
+
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+            <!-- Dashboard Content -->
+            <section class="p-6">
+                <h1 class="text-lg mb-6 font-semibold text-[#666666]">Dashboard CNK 3B</h1>
+                <div class="grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-6">
+
+                    <!-- KIRI -->
+                    <div class="bg-white rounded-xl p-0 ">
+                        <div class="relative w-full aspect-[3/3.6] overflow-hidden min-h-[320px]">
+                            <div class="scale-wrapper absolute top-0 left-0">
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KANAN -->
+                    <div class="bg-white rounded-xl p-2 overflow-hidden w-[900px] h-[320px]">
+                        <div class="w-max min-w-[100%] min-h-[320px]">
+                            <div class="scale-wrapper relative iframe-container">
+
+                                <h1 class="text-[30px]">🚀 COMING SOON</h1>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+
+        </main>
+    </div>
+
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const resizer = document.getElementById("resizer");
+        const main = document.querySelector("main");
+
+        let isResizing = false;
+
+        resizer.addEventListener("mousedown", function (e) {
+            isResizing = true;
+            document.body.style.cursor = "ew-resize";
+        });
+
+        document.addEventListener("mousemove", function (e) {
+            if (!isResizing) return;
+            const newWidth = e.clientX;
+            if (newWidth > 150 && newWidth < 500) { // batas minimum dan maksimum
+                sidebar.style.width = newWidth + "px";
+                main.style.marginLeft = newWidth + "px";
+            }
+        });
+
+        document.addEventListener("mouseup", function () {
+            isResizing = false;
+            document.body.style.cursor = "";
+        });
+
+        // Set margin-left awal sesuai lebar sidebar
+        window.addEventListener("DOMContentLoaded", () => {
+            main.style.marginLeft = sidebar.offsetWidth + "px";
+        });
+
+        function toggleMenu(id) {
+            const menu = document.getElementById(id);
+            menu.classList.toggle('hidden');
+        }
+
+        const items = document.querySelectorAll('.menu-item');
+        items.forEach(item => {
+            const link = item.querySelector('a');
+            if (link.href === window.location.href) {
+                item.classList.add('bg-gray-300');
+            } else {
+                item.classList.add('bg-white');
+            }
+        });
+
+        setTimeout(function () {
+            location.reload();
+        }, 300000); // 300000 ms = 5 menit
+    </script>
+</body>
+
+</html>

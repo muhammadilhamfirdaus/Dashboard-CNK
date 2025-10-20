@@ -1,0 +1,207 @@
+<aside id="sidebar"
+    class="fixed top-0 left-0 bottom-0 bg-white p-5 border-r border-[#eee] overflow-y-auto flex flex-col w-[280px] transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+    <div class="flex items-center justify-between gap-3 mb-8 shrink-0">
+        <div class="flex items-center gap-3">
+            <img src="/img/logo.png" alt="Logo" class="w-10 h-10 object-contain rounded-md">
+            <h2 class="text-sm font-bold text-[#4a4a4a] whitespace-nowrap overflow-hidden text-ellipsis">
+                PT. CITRA NUGERAH KARYA
+            </h2>
+        </div>
+        <button id="sidebar-close-btn" class="md:hidden text-gray-500 hover:text-gray-800">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <nav class="flex-grow">
+        <ul class="space-y-2">
+            <li class="menu-item">
+                <a href="/dashboard/index.html"
+                    class="flex items-center px-4 py-2 text-sm font-semibold text-[#444] rounded-lg hover:bg-gray-100 transition-colors">
+                    <span class="mr-3 text-lg">📊</span> Dashboard Finish Good
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/dashboard/Dashboard Subcont.html"
+                    class="flex items-center px-4 py-2 text-sm font-semibold text-[#444] rounded-lg hover:bg-gray-100 transition-colors">
+                    <span class="mr-3 text-lg">📈</span> Dashboard Subcont
+                </a>
+            </li>
+            <li>
+                <hr class="my-3">
+            </li>
+
+            <li>
+                <button onclick="toggleMenu('cnk1')"
+                    class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                    <span class="mr-3 text-lg">📁</span> CNK 1 <span
+                        class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                </button>
+                <ul id="cnk1" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                    <li>
+                        <button onclick="toggleMenu('cnk1-finishgoods')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">✅</span> Finish Goods <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk1-finishgoods"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                            <li><a href="https://docs.google.com/spreadsheets/d/1Z03fLQtmGHpFU-GytK2Kc9QKs4OOJPKxIvbSfxQyQ-A/edit?gid=630168796#gid=630168796"
+                                    target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="/cnk 1/fg/data kontrol.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                            <li><a href="/cnk 1/fg/summary.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Summary</a></li>
+                            <li><a href="/cnk 1/fg/all.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">All</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button onclick="toggleMenu('cnk1-subcont')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">📦</span> Subcont <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk1-subcont"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                            <li><a href="[URL_SUBCONT_SHEET]" target="_blank"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Go To GoogleSheet</a></li>
+                            <li><a href="/cnk 1/sc/data kontrol.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button onclick="toggleMenu('cnk2')"
+                    class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                    <span class="mr-3 text-lg">📁</span> CNK 2 <span
+                        class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                </button>
+                <ul id="cnk2" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                    <li>
+                        <button onclick="toggleMenu('cnk2-finishgoods')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">✅</span> Finish Goods <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk2-finishgoods"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                             <li><a href="https://docs.google.com/spreadsheets/d/1CX1sE_ccVYFgaiJon8Ye7au95K_dV2CKr_YBPBbKtv4/edit?gid=1014823213#gid=1014823213"
+                                    target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="/cnk 2/fg/data kontrol.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                            <li><a href="/cnk 2/fg/summary.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Summary</a></li>
+                            <li><a href="/cnk 2/fg/all.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">All</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button onclick="toggleMenu('cnk2-subcont')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">📦</span> Subcont <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk2-subcont"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                            <li><a href="..." target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="..." class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button onclick="toggleMenu('cnk3a')"
+                    class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                    <span class="mr-3 text-lg">📁</span> CNK 3A <span
+                        class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                </button>
+                <ul id="cnk3a" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                    <li>
+                        <button onclick="toggleMenu('cnk3a-finishgoods')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">✅</span> Finish Goods <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk3a-finishgoods"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                             <li><a href="https://docs.google.com/spreadsheets/d/1G-9BA8qunvHiVIHShRqgM0k4gD6710TUm_3i91i8Hgo/edit?gid=443047468#gid=443047468"
+                                    target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="/cnk 3a/fg/data kontrol.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                            <li><a href="/cnk 3a/fg/summary.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Summary</a></li>
+                            <li><a href="/cnk 3a/fg/all.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">All</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button onclick="toggleMenu('cnk3a-subcont')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">📦</span> Subcont <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk3a-subcont"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                            <li><a href="..." target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="..." class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <button onclick="toggleMenu('cnk3b')"
+                    class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                    <span class="mr-3 text-lg">📁</span> CNK 3B <span
+                        class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                </button>
+                <ul id="cnk3b" class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                    <li>
+                        <button onclick="toggleMenu('cnk3b-finishgoods')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">✅</span> Finish Goods <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk3b-finishgoods"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                           <li><a href="https://docs.google.com/spreadsheets/d/1UukFYEyo6Yd7AponlZiG-xbeBH1G_qOei0pxYFQscl4/edit?gid=1014823213#gid=1014823213"
+                                    target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="/cnk 3b/fg/data kontrol.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                            <li><a href="/cnk 3b/fg/summary.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">Summary</a></li>
+                            <li><a href="/cnk 3b/fg/all.html"
+                                    class="block px-4 py-2 hover:bg-gray-100 rounded">All</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button onclick="toggleMenu('cnk3b-subcont')"
+                            class="flex w-full items-center px-4 py-2 text-sm font-semibold text-[#444] hover:bg-gray-100 rounded-lg transition-colors">
+                            <span class="mr-3 text-lg">📦</span> Subcont <span
+                                class="ml-auto transform transition-transform duration-200">&#9662;</span>
+                        </button>
+                        <ul id="cnk3b-subcont"
+                            class="hidden ml-6 mt-1 text-sm text-[#444] space-y-1 border-l-2 border-gray-200 pl-4">
+                            <li><a href="..." target="_blank" class="block px-4 py-2 hover:bg-gray-100 rounded">Go To
+                                    GoogleSheet</a></li>
+                            <li><a href="..." class="block px-4 py-2 hover:bg-gray-100 rounded">Data Kontrol</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="resizer" class="resizer hidden md:block"></div>
+</aside>
